@@ -47,6 +47,9 @@ super();
   }
 }
   // TODO: Implement the wheelie method
+  wheelie(): void {
+    console.log(`${this.make} ${this.model} is performing a wheelie!`);
+  }
 
   // TODO: The method should log the message "Motorbike [make] [model] is doing a wheelie!"
 
