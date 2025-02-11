@@ -265,7 +265,10 @@ class Cli {
             parseInt(answers.year),
             parseInt(answers.weight),
             parseInt(answers.topSpeed),
-            []
+            [
+              new Wheel(parseInt(answers.frontWheelDiameter), answers.frontWheelBrand),
+              new Wheel(parseInt(answers.rearWheelDiameter), answers.rearWheelBrand),
+            ]
         );
         // TODO: push the motorbike to the vehicles array
         this.vehicles.push(motorbike);
@@ -326,7 +329,7 @@ class Cli {
             'Stop vehicle',
             'Turn right',
             'Turn left',
-             'Reverse',
+            'Reverse',
             'Tow',
             'Wheelie',
             'Select or create another vehicle',
@@ -401,6 +404,8 @@ class Cli {
               if (selectedTruck instanceof Truck) {
                 this.findVehicleToTow(selectedTruck);
                 return;
+              } else {
+                console.log(`Only Trucks can Tow!`)
               }
             }
           }
